@@ -5,25 +5,23 @@ import java.util.Scanner;
 
 public class GenerateRandomNumbers {
     public static void main(String[] args) {
-        System.out.println("How many random numbers to generate:");   // we use 1000000 to test
+        System.out.println("Numbers: ");   // 1000000
         Scanner input = new Scanner(System.in);
         int RandomNumCount = input.nextInt();
 
-        System.out.println("What's the radius?");   //we use 200 to test
+        System.out.println("Radius: ");   //200
         int radius = input.nextInt();
         int diameter = radius * 2;
         input.close();
 
         try {
 
-            // it creates file input4
+            // create file input
             File file = new File("./PiCalculationInput");
             file.createNewFile();
 
-            // Prepare input data 
+            // input data 
             FileWriter writer = new FileWriter(file);
-            //writer.write(radius + "\r\n");
-            //writer.write(System.getProperty("line.separator"));
 
             for (int i = 0; i < RandomNumCount; i++) {
                 int xvalue = (int) (Math.random() * diameter);
